@@ -291,7 +291,7 @@ Failure to do so will result in account closure."""
                     with col3:
                         st.markdown(f"<h3>⚡ {response_time:.2f}s</h3>", unsafe_allow_html=True)
                     
-                    # Risk gauge
+                    # Risk gauge - FIXED COLORS
                     fig = go.Figure(go.Indicator(
                         mode="gauge+number",
                         value=risk_level,
@@ -301,9 +301,9 @@ Failure to do so will result in account closure."""
                             'axis': {'range': [0, 100]},
                             'bar': {'color': risk_color},
                             'steps': [
-                                {'range': [0, 30], 'color': "#00ff8822"},
-                                {'range': [30, 70], 'color': "#ffaa0022"},
-                                {'range': [70, 100], 'color': "#ff444422"}
+                                {'range': [0, 30], 'color': "rgba(0, 255, 136, 0.2)"},      # Light green
+                                {'range': [30, 70], 'color': "rgba(255, 170, 0, 0.2)"},     # Light orange
+                                {'range': [70, 100], 'color': "rgba(255, 68, 68, 0.2)"}     # Light red
                             ],
                             'threshold': {
                                 'line': {'color': "white", 'width': 4},
